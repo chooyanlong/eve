@@ -1,4 +1,4 @@
-# eve
+# Eve
 Telehealth platform
 Webapp that allows a doctor to operate from anywhere with an integrated set of features on a single platform:
 - Doctor registration
