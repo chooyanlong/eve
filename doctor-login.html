@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Doctor Login - Eve Telehealth Platform</title>
+</head>
+<body>
+  <header>
+    <h1>Doctor Login</h1>
+  </header>
+
+  <section class="login-form">
+    <h2>Sign in with Google</h2>
+    <a href="#" id="google-login-button" class="google-login-button">Sign in with Google</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Eve Telehealth Platform. All rights reserved.</p>
+  </footer>
+
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>
+    function onGoogleLoginSuccess(googleUser) {
+      // Handle successful login
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getEmail());
+      // Redirect to doctor dashboard or other page
+      // window.location.href = 'doctor-dashboard.html';
+    }
+
+    function onGoogleLoginFailure(error) {
+      // Handle login failure
+      console.error('Login failed: ' + error.error);
+    }
+
+    // Initialize Google API
+    gapi.load('auth2', function() {
+      gapi.auth2.init({
+        client_id: 'YOUR_GOOGLE_CLIENT_ID',
+      }).then(function(auth2) {
+        const googleLoginButton = document.getElementById('google-login-button');
+        googleLoginButton.addEventListener('click', function() {
+          auth2.signIn().then(onGoogleLoginSuccess, onGoogleLoginFailure);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
