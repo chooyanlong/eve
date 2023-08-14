@@ -1,0 +1,31 @@
+/* Basic styling for the homepage */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #0099cc;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 3rem 0;
+}
+
+.feature {
+  text-align: center;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
